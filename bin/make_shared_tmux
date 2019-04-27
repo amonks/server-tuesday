@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+tmux -S "/tmp/$@" new -d -s "$@"
+chgrp friends "/tmp/$@"
+tmux -S "/tmp/$@" attach
+

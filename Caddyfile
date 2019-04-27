@@ -1,0 +1,19 @@
+http://popefucker.com {
+    proxy / localhost:3002
+
+    session /api {
+        sessionPath /token
+        sessionName s
+        jwtSecret secret
+        sessionKey key
+    }
+
+    proxy /api/counter localhost:3000
+    proxy /api localhost:3001
+
+    gzip {
+        ext .html .js
+        level 6
+    }
+}
+

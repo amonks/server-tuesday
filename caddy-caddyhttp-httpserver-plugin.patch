@@ -1,0 +1,12 @@
+diff --git a/caddyhttp/httpserver/plugin.go b/caddyhttp/httpserver/plugin.go
+index 58dbfd5..57d02ca 100644
+--- a/caddyhttp/httpserver/plugin.go
++++ b/caddyhttp/httpserver/plugin.go
+@@ -633,6 +633,7 @@ var directives = []string{
+ 	"proxyprotocol", // github.com/mastercactapus/caddy-proxyprotocol
+ 
+ 	// directives that add middleware to the stack
++	"session",
+ 	"locale", // github.com/simia-tech/caddy-locale
+ 	"log",
+ 	"cache", // github.com/nicolasazrak/caddy-cache

@@ -1,0 +1,13 @@
+[Unit]
+Description=db api
+
+[Service]
+Environment=PORT=3001
+User=monks
+Restart=on-failure
+WorkingDirectory=/home/monks/users/
+ExecStart=/home/monks/users/start
+
+[Install]
+WantedBy=multi-user.target
+
