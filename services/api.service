@@ -5,8 +5,8 @@ Description=db api
 Environment=PORT=3001
 User=monks
 Restart=on-failure
-WorkingDirectory=/home/monks/users/
-ExecStart=/home/monks/users/start
+WorkingDirectory=/home/monks/services/
+ExecStart=/usr/bin/yarn start-api
 
 [Install]
 WantedBy=multi-user.target

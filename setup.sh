@@ -180,7 +180,7 @@ if ! which caddy_with_plugins; then
 
 	touch /etc/caddy/Caddyfile
 
-	cp caddy.service /etc/systemd/system/
+	cp services/caddy.service /etc/systemd/system/
 	sed -i "s/__GANDIV5_API_KEY__/$GANDIV5_API_KEY/g" /etc/systemd/system/caddy.service
 	chmod 644 /etc/systemd/system/caddy.service
 	systemctl daemon-reload

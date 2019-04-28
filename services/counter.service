@@ -5,8 +5,8 @@ Description=visit counter
 Environment=PORT=3000
 User=monks
 Restart=on-failure
-WorkingDirectory=/home/monks/counter/
-ExecStart=/home/monks/counter/start
+WorkingDirectory=/home/monks/services/
+ExecStart=/usr/bin/yarn start-counter
 
 [Install]
 WantedBy=multi-user.target

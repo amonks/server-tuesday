@@ -8,7 +8,7 @@ http://popefucker.com {
         sessionKey key
     }
 
-    proxy /api/counter localhost:3000
+    proxy /api/count localhost:3000
     proxy /api localhost:3001
 
     gzip {

@@ -6,7 +6,7 @@ Environment=PORT=3002
 User=monks
 Restart=on-failure
 WorkingDirectory=/home/monks/client/
-ExecStart=/home/monks/client/start
+ExecStart=/usr/bin/yarn start
 
 [Install]
 WantedBy=multi-user.target
