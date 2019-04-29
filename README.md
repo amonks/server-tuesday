@@ -52,3 +52,45 @@ git commit
 git push
 ```
 
+
+## adding a service
+
+let's serve some web!
+
+from your home directory,
+
+```
+mkdir web
+cd web
+echo hello > index.html
+serve -p 5000
+```
+
+then, in another window, `curl localhost:5000`
+
+
+tada! your website is serving! but it isn't public…
+
+let's add it to the caddyfile
+
+```
+sudo su root
+cd /root/server-tuesday
+nano Caddyfile
+./setup.sh
+```
+
+Tada! now you can visit popefucker.com/{whatever path} and see your website! IF and only if the server is running.
+
+Let's make it run at boot.
+
+```
+cp services/jon.service services/{you}.service # change the user and name
+nano services/{you}.service
+nano setup.sh # add an "add_service" at the end
+./setup.sh
+systemctl status {you}
+```
+
+
+
