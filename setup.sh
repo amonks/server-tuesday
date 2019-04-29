@@ -233,11 +233,14 @@ if ! grep -q friends /etc/group; then
 fi
 echo
 
+# here is where we make users!!!!!
 # make each user
 for username in `ls users` ; do
 	if ! id -u $username ; then
 		section Making user $username
 
+		# we add each user to the "sudo" group on this line
+		# people in that group are admins—they can sudo stuff
 		useradd --create-home --shell /usr/bin/fish --groups sudo,friends $username
 		passwd --delete $username
 		end_section
