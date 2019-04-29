@@ -1,0 +1,13 @@
+[Unit]
+Description=jon's personal website lololol
+
+[Service]
+Environment=PORT=4000
+User=johnnycircus
+Restart=on-failure
+WorkingDirectory=/home/johnnycircus/web/
+ExecStart=/usr/bin/serve -p 4000
+
+[Install]
+WantedBy=multi-user.target
+
