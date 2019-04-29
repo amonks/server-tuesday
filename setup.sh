@@ -27,6 +27,7 @@ function add_service() {
 		cp services/$@.service /etc/systemd/system/
 		chmod 644 /etc/systemd/system/$@.service
 		systemctl daemon-reload
+		systemctl start $@
 		systemctl enable $@
 		end_section
 	fi
