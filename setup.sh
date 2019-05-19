@@ -217,9 +217,22 @@ fi
 echo
 
 
-if ! diff conf/tmux.conf /etc/tmux.conf; then
+if ! diff conf/bash.bashrc; then
+	section Updating global bashrc
+
+	cp conf/bash.bashrc /etc/bash.bashrc
+	end_section
+fi
+echo
+
+
+if ! -e cache/tmux.conf; then
 	section Updating global tmux conf
+
+	curl https://raw.githubusercontent.com/tmux-plugins/tmux-sensible/master/sensible.tmux -o cache/sensible.tmux
 	cp conf/tmux.conf /etc/tmux.conf
+	cp cache/sensible.tmux /etc/sensible.tmux
+
 	end_section
 fi
 echo
