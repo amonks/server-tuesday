@@ -1,8 +1,8 @@
 http://popefucker.com {
     proxy / localhost:3002
 
-    proxy /jon localhost:4000 {
-        without /jon
+    proxy /jon/ localhost:4000 {
+	without /jon/
     }
 
     session /api {
