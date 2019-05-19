@@ -156,6 +156,7 @@ for file in `ls bin`; do
 		section Installing $file
 		cp bin/$file /usr/local/bin
 		end_section
+		echo
 	fi
 done
 echo
