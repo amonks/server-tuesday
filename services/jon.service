@@ -5,7 +5,7 @@ Description=jon's personal website lololol
 Environment=PORT=4000
 User=johnnycircus
 Restart=on-failure
-WorkingDirectory=/home/johnnycircus/web/
+WorkingDirectory=/home/johnnycircus/www/
 ExecStart=/usr/bin/serve -p 4000
 
 [Install]
