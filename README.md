@@ -10,7 +10,7 @@ I made a digitalocean "droplet"
 ssh -A {your droplet ip}
 git clone git@github.com:amonks/server-tuesday.git
 cd server-tuesday
-./setup.py
+./setup.sh
 ```
 
 ## adding a user
