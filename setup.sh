@@ -260,6 +260,7 @@ if ! grep -q friends /etc/group; then
 fi
 echo
 
+
 # here is where we make users!!!!!
 # make each user
 for username in `ls users` ; do
@@ -278,7 +279,6 @@ for username in `ls users` ; do
 		section "Setting up ssh authorized_keys for $username"
 		mkdir -p /home/$username/.ssh
 		cp users/$username /home/$username/.ssh/authorized_keys
-		chown --recursive $username /home/$username
 		end_section
 	fi
 	echo
@@ -291,6 +291,21 @@ for username in `ls users` ; do
 		end_section
 	fi
 	cd $dir
+	echo
+
+	for file in `find skel -type f | sed 's/^skel\///'` ; do
+		if ! test -e /home/$username/$file; then
+			section "Adding $file to home folder for $username"
+			mkdir -p `dirname /home/$username/$file`
+			cp skel/$file /home/$username/$file
+			end_section
+		fi
+	done
+	echo
+
+	section "Chowning home folder for $username"
+	chown --recursive $username /home/$username
+	end_section
 done
 
 
