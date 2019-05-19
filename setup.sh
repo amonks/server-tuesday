@@ -247,6 +247,12 @@ fi
 echo
 
 
+section Copying skel
+cp -r skel/ /etc/
+end_section
+echo
+
+
 if ! grep -q friends /etc/group; then
 	section Making friends group
 	groupadd friends
