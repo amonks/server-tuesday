@@ -78,6 +78,13 @@ if ! which nvim; then
 fi
 echo
 
+if ! which direnv; then
+	section Installing direnv
+	apt-get install direnv -y
+	end_section
+fi
+echo
+
 
 python3_version=3.6
 if ! which python$python3_version; then
