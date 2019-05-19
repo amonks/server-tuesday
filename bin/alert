@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+# Add an "alert" for long running commands.  Use like so:
+#   sleep 10; alert
+echo -e '\a'
+
