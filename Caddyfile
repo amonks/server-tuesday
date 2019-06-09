@@ -5,6 +5,10 @@ http://popefucker.com {
 	without /jon/
     }
 
+    proxy /fenn localhost:5000 {
+        without /fenn
+    }
+
     session /api {
         sessionPath /token
         sessionName s
