@@ -96,14 +96,6 @@ if ! which elixir; then
 fi
 echo
 
-if ! mix phx.new --version; then
-	section Installing phoenix
-	yes | mix local.hex
-	yes | mix archive.install hex phx_new 1.4.6
-	end_section
-fi
-echo
-
 python3_version=3.6
 if ! which python$python3_version; then
 	section Installing python $python3_version
