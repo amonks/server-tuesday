@@ -326,6 +326,15 @@ for username in `ls users` ; do
 	end_section
 done
 
+if ! test -d /var/friends; then
+	section "Creating /var/friends for shared stuff"
+	mkdir /var/friends
+	chgrp -R friends /var/friends
+	chmod -R 2775 /var/friends
+	end_section
+fi
+echo
+
 
 add_service counter
 add_service api
