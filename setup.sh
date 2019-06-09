@@ -85,6 +85,24 @@ if ! which direnv; then
 fi
 echo
 
+if ! which elixir; then
+	section Installing erlang and elixir
+	wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb 
+	dpkg -i erlang-solutions_1.0_all.deb
+	rm erlang-solutions_1.0_all.deb
+	apt-get install esl-erlang -y
+	apt-get install elixir -y
+	end_section
+fi
+echo
+
+if ! mix phx.new --version; then
+	section Installing phoenix
+	yes | mix local.hex
+	yes | mix archive.install hex phx_new 1.4.6
+	end_section
+fi
+echo
 
 python3_version=3.6
 if ! which python$python3_version; then
